@@ -1,0 +1,591 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../project1/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Web Scrp - Yanan(Syrena)'s Study Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#urlopenreturns-an-httpresponse-object" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Yanan(Syrena)&#39;s Study Notes" class="md-header__button md-logo" aria-label="Yanan(Syrena)'s Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Yanan(Syrena)'s Study Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web Scrp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../project1/" class="md-tabs__link md-tabs__link--active">
+        Project
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Yanan(Syrena)&#39;s Study Notes" class="md-nav__button md-logo" aria-label="Yanan(Syrena)'s Study Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Yanan(Syrena)'s Study Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project1/" class="md-nav__link">
+        project1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web Scrp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Web Scrp
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#urlopenreturns-an-httpresponse-object" class="md-nav__link">
+    URLopen（）returns an HTTPResponse object
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanicalsoup" class="md-nav__link">
+    MechanicalSoup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-browser-instance-and-use-it-to-request-the-url-ass-the-html-content-to-variable-using-soup-property" class="md-nav__link">
+    create a browser instance and use it to request the URL , ass the HTML content to variable using .soup property
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select-the-username-and-password-inouts-and-set-the-value" class="md-nav__link">
+    select the username and password inouts and set the value
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-submit-the-form-and-pass-two-arguments-to-this-method" class="md-nav__link">
+    you submit the form, and pass two arguments to this method
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Web Scrp</h1>
+
+<pre><code class="language-python">pip install beautifulsoup4
+</code></pre>
+<pre><code class="language-python">pip install MechanicalSoup
+
+</code></pre>
+<pre><code>Collecting MechanicalSoup
+  Using cached MechanicalSoup-1.2.0-py3-none-any.whl (19 kB)
+Requirement already satisfied: requests&gt;=2.22.0 in d:\software\anaconda\lib\site-packages (from MechanicalSoup) (2.26.0)
+Requirement already satisfied: beautifulsoup4&gt;=4.7 in d:\software\anaconda\lib\site-packages (from MechanicalSoup) (4.10.0)
+Requirement already satisfied: lxml in d:\software\anaconda\lib\site-packages (from MechanicalSoup) (4.6.3)
+Requirement already satisfied: soupsieve&gt;1.2 in d:\software\anaconda\lib\site-packages (from beautifulsoup4&gt;=4.7-&gt;MechanicalSoup) (2.2.1)
+Requirement already satisfied: charset-normalizer~=2.0.0 in d:\software\anaconda\lib\site-packages (from requests&gt;=2.22.0-&gt;MechanicalSoup) (2.0.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in d:\software\anaconda\lib\site-packages (from requests&gt;=2.22.0-&gt;MechanicalSoup) (2021.10.8)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in d:\software\anaconda\lib\site-packages (from requests&gt;=2.22.0-&gt;MechanicalSoup) (3.2)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in d:\software\anaconda\lib\site-packages (from requests&gt;=2.22.0-&gt;MechanicalSoup) (1.26.7)
+Installing collected packages: MechanicalSoup
+Successfully installed MechanicalSoup-1.2.0
+Note: you may need to restart the kernel to use updated packages.
+</code></pre>
+<pre><code class="language-python">from urllib.request import urlopen
+import re
+from bs4 import BeautifulSoup
+import mechanicalsoup
+</code></pre>
+<pre><code class="language-python">url = &quot;http://olympus.realpython.org/profiles/aphrodite&quot;
+</code></pre>
+<h3 id="urlopenreturns-an-httpresponse-object">URLopen（）returns an HTTPResponse object</h3>
+<pre><code class="language-python">page = urlopen(url)
+page
+</code></pre>
+<pre><code class="language-python">html_bytes = page.read()
+print(html_bytes)
+html = html_bytes.decode('utf-8')
+print(html)
+print(type(html))
+</code></pre>
+<pre><code class="language-python">### return the index of the first occurrence of a sbustring
+</code></pre>
+<pre><code class="language-python">title_index = html.find('&lt;title&gt;')
+print(title_index)
+start_index = title_index + len(&quot;&lt;title&gt;&quot;)
+print(start_index)
+end_index = html.find(&quot;&lt;/title&gt;&quot;)
+print(end_index)
+title = html[start_index:end_index]
+print(title)
+</code></pre>
+<pre><code class="language-python">url = &quot;http://olympus.realpython.org/profiles/dionysus&quot;
+page = urlopen(url)
+html = page.read().decode(&quot;utf-8&quot;)
+print(html)
+
+pattern = '&lt;title.*?&gt;.*?&lt;/title.*?&gt;'
+match_results = re.search(pattern, html, re.IGNORECASE)
+title = match_results.group()
+print(title)
+title = re.sub('&lt;.*?&gt;',&quot;&quot;,title)
+print(title)
+</code></pre>
+<pre><code class="language-python">url = &quot;http://olympus.realpython.org/profiles/dionysus&quot;
+page = urlopen(url)
+html = page.read().decode('utf-8')
+print(html)
+soup = BeautifulSoup(html, 'html.parser')
+print(soup)
+</code></pre>
+<pre><code class="language-python">print(soup.get_text())
+</code></pre>
+<pre><code class="language-python">img1, img2 = soup.find_all('img')
+</code></pre>
+<pre><code class="language-python">img1['src']
+</code></pre>
+<pre><code class="language-python">soup.title.string
+</code></pre>
+<h3 id="mechanicalsoup">MechanicalSoup</h3>
+<h3 id="create-a-browser-instance-and-use-it-to-request-the-url-ass-the-html-content-to-variable-using-soup-property">create a browser instance and use it to request the URL , ass the HTML content to variable using .soup property</h3>
+<pre><code class="language-python">browser = mechanicalsoup.Browser()
+url = &quot;http://olympus.realpython.org/login&quot;
+login_page = browser.get(url)
+login_html = login_page.soup
+print(login_html)
+</code></pre>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Log In&lt;/title&gt;
+&lt;/head&gt;
+&lt;body bgcolor="yellow"&gt;
+&lt;center&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Please log in to access Mount Olympus:&lt;/h2&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;form action="/login" method="post" name="login"&gt;
+Username: &lt;input name="user" type="text"/&gt;&lt;br/&gt;
+Password: &lt;input name="pwd" type="password"/&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;input type="submit" value="Submit"/&gt;
+&lt;/form&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-python">form = login_html.select('form')[0]
+print(form)
+</code></pre>
+<pre><code>&lt;form action="/login" method="post" name="login"&gt;
+Username: &lt;input name="user" type="text"/&gt;&lt;br/&gt;
+Password: &lt;input name="pwd" type="password"/&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;input type="submit" value="Submit"/&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="select-the-username-and-password-inouts-and-set-the-value">select the username and password inouts and set the value</h3>
+<pre><code class="language-python">form = login_html.select('form')[0]
+print(form)
+form.select('input')[0]['value'] = 'zeus'
+form.select(&quot;input&quot;)[1][&quot;value&quot;] = &quot;ThunderDude&quot;
+</code></pre>
+<pre><code>&lt;form action="/login" method="post" name="login"&gt;
+Username: &lt;input name="user" type="text" value="zeus"/&gt;&lt;br/&gt;
+Password: &lt;input name="pwd" type="password" value="ThunderDude"/&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;input type="submit" value="Submit"/&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="you-submit-the-form-and-pass-two-arguments-to-this-method">you submit the form, and pass two arguments to this method</h3>
+<pre><code class="language-python">profiles_page = browser.submit(form, login_page.url)
+</code></pre>
+<pre><code class="language-python">links = profiles_page.soup.select('a')
+print(links)
+</code></pre>
+<pre><code>[&lt;a href="/profiles/aphrodite"&gt;Aphrodite&lt;/a&gt;, &lt;a href="/profiles/poseidon"&gt;Poseidon&lt;/a&gt;, &lt;a href="/profiles/dionysus"&gt;Dionysus&lt;/a&gt;]
+</code></pre>
+<pre><code class="language-python">for link in links:
+    address = link['href']
+    text = link.text
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
